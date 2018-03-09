@@ -6,13 +6,13 @@
       <div class="row">
         <div class="logo col-sm-6 ">
           <i class="fa fa-shopping-bag"></i>
-          <a href="#">智慧城市汽车租赁系统</a>
+          <a href="#">个人网上银行云管理系统</a>
         </div>
         <div class="info col-sm-6 hidden-xs">
           <el-dropdown class="user">
             <span class="el-dropdown-link">
-              <img src="@/assets/user_2.jpg">
-              超级管理员<i class="el-icon-arrow-down el-icon--right"></i>
+              <img src="@/assets/logo_03.jpg">
+              More<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item><i class="fa fa-exclamation-circle fa-fw"></i>待办事宜</el-dropdown-item>
@@ -57,47 +57,55 @@
             <el-submenu index="1" >
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span slot="title">信息管理</span>
+                <span slot="title">业务系统</span>
               </template>
-              <el-menu-item index="/info/car">
+              <el-menu-item index="/bank/appointment">
                 <i class="el-icon-setting"></i>
-                <span slot="title">车辆信息</span>
+                <span slot="title">贷款预约</span>
               </el-menu-item>
               <el-menu-item index="/info/customer">
                 <i class="el-icon-setting"></i>
-                <span slot="title">顾客信息</span>
+                <span slot="title">投资理财</span>
+              </el-menu-item>
+              <el-menu-item index="/info/customer">
+                <i class="el-icon-setting"></i>
+                <span slot="title">申请贷款</span>
+              </el-menu-item>
+              <el-menu-item index="/info/customer">
+                <i class="el-icon-setting"></i>
+                <span slot="title">存取业务</span>
               </el-menu-item>
             </el-submenu>
 
-            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
-              <span slot="title">租赁管理</span>
-            </el-menu-item>
-
-             <el-submenu index="3" >
+             <el-submenu index="2" >
               <template slot="title">
                 <i class="el-icon-setting"></i>
-                <span slot="title">系统设置</span>
+                <span slot="title">客户系统</span>
               </template>
-              <el-menu-item index="/settings/department">
+              <el-menu-item index="/bank/register">
                 <i class="el-icon-setting"></i>
-                <span slot="title">方向设置</span>
+                <span slot="title">注册用户</span>
               </el-menu-item>
-              <el-menu-item index="/settings/clazz">
+              <el-menu-item index="/bank/record">
                 <i class="el-icon-setting"></i>
-                <span slot="title">班级设置</span>
+                <span slot="title">贷款记录</span>
               </el-menu-item>
-              <el-menu-item index="/settings/teacher">
+              <el-menu-item index="/bank/load">
                 <i class="el-icon-setting"></i>
-                <span slot="title">讲师设置</span>
+                <span slot="title">个人贷款</span>
               </el-menu-item>
             </el-submenu>
+             <el-menu-item index="/bank/about">
+              <i class="el-icon-menu"></i>
+              <span slot="title">关于我们</span>
+            </el-menu-item>
           </el-menu>
         </div>
       </div>
       <!-- 内容区右侧 -->
       <div class="app_right" :class="collapseRight">
-        <div class="app_right_top">设置 > 方向设置</div>
+        <div class="app_right_top">首页 > 业务系统</div>
+        <div class="app_right_right"><a href="#">点击登录</a></div>
         <div class="app_right_bottom">
           <!-- 用于接受组件加载 -->
           <router-view></router-view>
@@ -107,7 +115,14 @@
     <!-- 体部布局结束-->
     <!-- 底部布局开始-->
     <footer class="footer">
-      <div>版权所有：昆山杰普软件科技有限公司</div>
+    <div class="a">
+      <a style="text-decoration: none;" href="#" >基本版</a>
+        <a style="text-decoration: none;" href="#">English</a>
+      <a style="text-decoration: none;" href="#">手机版</a>
+      <a style="text-decoration: none;" href="#">企业邮箱</a>
+    </div>
+      <div class="b">版权所有：龚家湾理工大学</div>
+
     </footer>
     <!-- 底部布局结束-->
   </div>
@@ -155,7 +170,7 @@ export default {
 <style scoped="scoped" lang="scss">
 $bgColor:#eff3f4;
 
-$bgColor_header:pink;
+$bgColor_header:#056F36;
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -215,8 +230,6 @@ $bgColor_header:pink;
     left:0;right:0;
     top:56px;
     bottom:30px;
-    
-    
 
     .app_left {
       position:absolute;
@@ -301,6 +314,11 @@ $bgColor_header:pink;
         border-bottom:1px solid #ccc;
       }
       
+      .app_right_right{
+        float:right;
+        margin-top:8px;
+        margin-right :60px;
+      }
       .app_right_bottom {
         background:#FFFFFF;
         position:absolute;
@@ -323,11 +341,15 @@ $bgColor_header:pink;
     background-color:$bgColor_header;
     left:0;right:0;
     bottom:0;
-    height:30px;
+    height:60px;
     line-height:30px;
     text-align:center;
     color:#FFFFFF;
   }
+  .b{
+    font-size: 12px;
+  }
+
   // 底部样式结束
 }
 </style>
